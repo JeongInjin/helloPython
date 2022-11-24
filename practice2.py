@@ -35,4 +35,28 @@ cabinet.clear()
 print(cabinet)
 
 print("----------------")
+# 튜플
+menu = ("돈까스", "치즈까스")
+print(menu[0])
+print(menu[1])
+
+(name, age, hobby) = "가나다", 20, "코딩"
+print(name, age, hobby)
 print("----------------")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
