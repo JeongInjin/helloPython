@@ -26,7 +26,18 @@ print(menu, type(menu))
 
 menu = list(menu)
 print(menu, type(menu))
+print("----------------")
+from random import *
+lst = [1, 2, 3, 4, 5]
+print(lst)
+shuffle(lst)
+print(lst)
+print(sample(lst, 2))
 
+users = range(1, 21) # 1 ~ 20 까지 숫자 생성
+# print(type(users))
+users = list(users)
+print(users) # range type 이여서 그냥 쓸 수 없다.
 
 print("----------------")
 
