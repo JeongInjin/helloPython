@@ -8,19 +8,22 @@
 # browswer.get("https://www.naver.com")
 #
 
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 import time
 import csv
+
+# 4버전
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager # 크롬 드라이버 자동 업데이트
+from selenium.webdriver.chrome.service import Service
 
 # find_element_by_css_selector 를 쓰기위해..
 # https://hyunsooworld.tistory.com/entry/%EC%85%80%EB%A0%88%EB%8B%88%EC%9B%80-%EC%98%A4%EB%A5%98-AttributeError-WebDriver-object-has-no-attribute-findelementbycssselector-%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0
 from selenium.webdriver.common.by import By
 
-# 크롬 드라이버 자동 업데이트
-from webdriver_manager.chrome import ChromeDriverManager
+
 
 # 브라우저 꺼짐 방지
 chrome_options = Options()
@@ -30,8 +33,8 @@ chrome_options.add_experimental_option("detach", True)
 chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 service = Service(executable_path=ChromeDriverManager().install())
-browser = webdriver.Chrome(service=service, options=chrome_options)
-
+# browser = webdriver.Chrome(service=service, options=chrome_options)
+browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 # csv
 f = open("/Users/injinjeong/jeong_workspace/python_workspace/hellopython/crawling/selenium/data.csv", 'w', encoding='CP949', newline='')
 csvWirter = csv.writer(f)
